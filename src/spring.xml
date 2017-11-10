@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+<!--
+<bean id="triangle" class="org.ruchika.java.Triangle" >
+<constructor-arg type="int" value="20"/>
+<constructor-arg type="java.lang.String" value="Ruchika"/>
+-->
+
+<!--
+<bean id="triangle" class="org.ruchika.java.Triangle" >
+<property name="pointA" ref="zeroPoint"/> 
+<property name="pointB" ref="pointA"/>
+<property name="pointC" ref="pointB"/>
+
+<bean id="zeroPoint" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="0"></property>
+</bean>
+
+<bean id="pointA" class="org.ruchika.java.Point">
+    <property name="x" value="-20"></property>
+    <property name="y" value="0"></property>
+</bean>
+
+<bean id="pointB" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="-20"></property>
+</bean>
+ -->
+ 
+ <!--
+ <bean id="triangle" class="org.ruchika.java.Triangle" >
+ <property name="pointA" ref="zeroPoint"></property>
+ <property name="pointB">
+ <bean class="org.ruchika.java.Point">
+    <property name="x" value="-20"></property>
+    <property name="y" value="0"></property>
+</bean>
+ </property>
+ <property name="pointC">
+ <bean class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="-20"></property>
+</bean>
+ </property>
+</bean>
+
+<bean id="zeroPoint" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="0"></property>
+</bean> 
+  -->
+  
+  <!-- 
+  <bean id="triangle" class="org.ruchika.java.Triangle" >
+ <property name="pointA"> 
+   <idref bean="zeroPoint"/> 
+ </property>
+ <property name="pointB">
+ <bean class="org.ruchika.java.Point">
+    <property name="x" value="-20"></property>
+    <property name="y" value="0"></property>
+</bean>
+ </property>
+ <property name="pointC">
+ <bean class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="-20"></property>
+</bean>
+ </property>
+</bean>
+
+<bean id="zeroPoint" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="0"></property>
+  </bean> 
+  -->
+
+<!-- 
+<bean id="triangle" class="org.ruchika.java.Triangle" >
+<property name="points">
+<list>
+<ref bean="zeroPoint"/>
+<ref bean="pointA"/>
+<ref bean="pointB"/>
+</list>
+</property>
+</bean>
+
+<bean id="zeroPoint" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="0"></property>
+</bean>
+
+<bean id="pointA" class="org.ruchika.java.Point">
+    <property name="x" value="-20"></property>
+    <property name="y" value="0"></property>
+</bean>
+
+<bean id="pointB" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="-20"></property>
+</bean>
+ -->
+
+<bean id="triangle" class="org.ruchika.java.Triangle" autowire="byName">
+
+</bean>
+
+<bean id="pointA" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="0"></property>
+</bean>
+
+<bean id="pointB" class="org.ruchika.java.Point">
+    <property name="x" value="-20"></property>
+    <property name="y" value="0"></property>
+</bean>
+
+<bean id="pointC" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="-20"></property>
+</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
