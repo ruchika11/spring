@@ -2,7 +2,12 @@ package org.ruchika.java;
 
 import java.util.List;
 
-public class Triangle {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Triangle implements ApplicationContextAware,BeanNameAware{
 
 	// this code is related to setter and constructor injection
 
@@ -95,10 +100,12 @@ public class Triangle {
 	// }
 
 	// ---------------------------------------------------------------------------------------------------------------------------------
-	// This code is related to auto wiring
+	// This code is related to auto wiring and application context aware and bean definition inheritance
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
+	
+	private ApplicationContext ac;
 
 	public Point getPointA() {
 		return pointA;
@@ -126,6 +133,17 @@ public class Triangle {
 
 	public void draw() {
 		System.out.println("Point A is (" + getPointA().getX() + ")");
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+             this.ac = context;		
+	}
+
+	@Override
+	public void setBeanName(String arg0) {
+	 System.out.println("bean name is "+arg0);
+		
 	}
 
 }

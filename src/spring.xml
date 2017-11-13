@@ -104,7 +104,7 @@
     <property name="y" value="-20"></property>
 </bean>
  -->
-
+<!--  
 <bean id="triangle" class="org.ruchika.java.Triangle" autowire="byName">
 
 </bean>
@@ -123,10 +123,32 @@
     <property name="x" value="0"></property>
     <property name="y" value="-20"></property>
 </bean>
+-->
+
+<bean id="parentTriangle" class="org.ruchika.java.Triangle" abstract="true">
+<property name="pointA" ref="zeroPoint"/> 
+</bean>
+
+<bean id="triangle" class="org.ruchika.java.Triangle" parent="parentTriangle">
+<property name="pointB" ref="pointA"/>
+<property name="pointC" ref="pointB"/>
+</bean>
+
+<bean id="zeroPoint" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="0"></property>
+</bean>
+
+<bean id="pointA" class="org.ruchika.java.Point">
+    <property name="x" value="-20"></property>
+    <property name="y" value="0"></property>
+</bean>
+
+<bean id="pointB" class="org.ruchika.java.Point">
+    <property name="x" value="0"></property>
+    <property name="y" value="-20"></property>
+</bean>
 </beans>
-
-
-
 
 
 
